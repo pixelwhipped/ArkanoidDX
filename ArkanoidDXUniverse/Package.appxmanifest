@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="42769PixelWhipped.ArkanoidDX" Publisher="CN=25DAC6FD-1AC6-4AC3-BD12-47C75263F078" Version="1.1.3.0" />
+  <mp:PhoneIdentity PhoneProductId="6d1b109a-296c-4c48-9079-68d78dbce383" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>ArkanoidDX</DisplayName>
+    <PublisherDisplayName>PixelWhipped</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ArkanoidDXUniverse.App">
+      <uap:VisualElements DisplayName="Arkanoid DX Universe" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Based on the Classic 1986 game Arkanoid.  All original 35 levels, 64 Revenge of the Doh levels and s 32 Arkanoid Tournament levels have been recreated with the addition of 30 more DX levels and several new bricks and power ups which can be now be combined." BackgroundColor="#000000">
+        <uap:DefaultTile ShortName="Arkanoid DX Universe" Wide310x150Logo="Assets\310150.png" Square310x310Logo="Assets\Square310x310Logo.png" Square71x71Logo="Assets\Square71x71Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#000000" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

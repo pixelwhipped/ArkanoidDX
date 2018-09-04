@@ -1,0 +1,943 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3D43D43E-E919-422C-8CDB-3E3A2DC7612E}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArkanoidDXUniverse</RootNamespace>
+    <AssemblyName>ArkanoidDXUniverse</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>ArkanoidDXUniverse_StoreKey.pfx</PackageCertificateKeyFile>
+    <MonoGamePlatform>WindowsStoreApp</MonoGamePlatform>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>77E22C4A279C5DF85D40F4B40A09729EE5A6075D</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\WindowsUniversal\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UAP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\WindowsUniversal\MonoGame.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Arena\BaseArena.cs" />
+    <Compile Include="Arena\BossArena.cs" />
+    <Compile Include="Arena\BrickArena.cs" />
+    <Compile Include="Arena\CreditsArena.cs" />
+    <Compile Include="Arena\EditArena.cs" />
+    <Compile Include="Arena\LoadArena.cs" />
+    <Compile Include="Arena\MenuArena.cs" />
+    <Compile Include="Arena\MenuArenaSelector.cs" />
+    <Compile Include="Arena\PauseArena.cs" />
+    <Compile Include="Arena\PlayableArena.cs" />
+    <Compile Include="Arena\PlayArena.cs" />
+    <Compile Include="Arena\PlayerSelectArena.cs" />
+    <Compile Include="Arena\PowerUpArena.cs" />
+    <Compile Include="Audio.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Fader.cs" />
+    <Compile Include="GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Arkanoid.cs" />
+    <Compile Include="GameSettings.cs" />
+    <Compile Include="Graphics\Extensions.cs" />
+    <Compile Include="Graphics\Fonts.cs" />
+    <Compile Include="Graphics\GameFont.cs" />
+    <Compile Include="Graphics\IDrawable.cs" />
+    <Compile Include="Graphics\Sprite.cs" />
+    <Compile Include="Graphics\Sprites.cs" />
+    <Compile Include="Graphics\Textures.cs" />
+    <Compile Include="Input\KeyboardInput.cs" />
+    <Compile Include="Input\MouseInput.cs" />
+    <Compile Include="Input\TouchInput.cs" />
+    <Compile Include="Input\UnifiedInput.cs" />
+    <Compile Include="Interfaces\ILocatable.cs" />
+    <Compile Include="Interfaces\IParent.cs" />
+    <Compile Include="Levels\DemoLevelWadSelector.cs" />
+    <Compile Include="Levels\EditLevelWadSelector.cs" />
+    <Compile Include="Levels\Level.cs" />
+    <Compile Include="Levels\LevelReader.cs" />
+    <Compile Include="Levels\Levels.cs" />
+    <Compile Include="Levels\LevelWad.cs" />
+    <Compile Include="Levels\LevelWadSelector.cs" />
+    <Compile Include="Levels\WadScore.cs" />
+    <Compile Include="Monologuecs.cs" />
+    <Compile Include="Objects\Ball.cs" />
+    <Compile Include="Objects\BlobEnemy.cs" />
+    <Compile Include="Objects\Brick.cs" />
+    <Compile Include="Objects\Capsule.cs" />
+    <Compile Include="Objects\Rubix.cs" />
+    <Compile Include="Objects\DemoVaus.cs" />
+    <Compile Include="Objects\Doh.cs" />
+    <Compile Include="Objects\DohSplinter.cs" />
+    <Compile Include="Objects\Enemy.cs" />
+    <Compile Include="Objects\GameObject.cs" />
+    <Compile Include="Objects\ISpawner.cs" />
+    <Compile Include="Objects\Laser.cs" />
+    <Compile Include="Objects\Map.cs" />
+    <Compile Include="Objects\OrbSpawnEnemy.cs" />
+    <Compile Include="Objects\SideEntry.cs" />
+    <Compile Include="Objects\TopEntry.cs" />
+    <Compile Include="Objects\UfoGreenEnemy.cs" />
+    <Compile Include="Objects\Vaus.cs" />
+    <Compile Include="Objects\Warp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceCompoment.cs" />
+    <Compile Include="Scoring.cs" />
+    <Compile Include="Starfeild.cs" />
+    <Compile Include="Types.cs" />
+    <Compile Include="UI\Branding.cs" />
+    <Compile Include="Utilities\AsyncIO.cs" />
+    <Compile Include="Utilities\Drawing.cs" />
+    <Compile Include="Utilities\LevelIO.cs" />
+    <Compile Include="Utilities\RandomUtils.cs" />
+    <Compile Include="Utilities\Collisions.cs" />
+    <Compile Include="Utilities\Tween.cs" />
+    <Compile Include="Utilities\VectorHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ArkanoidDXUniverse_StoreKey.pfx" />
+    <None Include="Assets\Shop.pdn" />
+    <None Include="Assets\SplashScreen.pdn" />
+    <None Include="Content\Background\Thumbs.db" />
+    <Content Include="Assets\100100.png" />
+    <Content Include="Assets\107107.png" />
+    <Content Include="Assets\1240600.png" />
+    <Content Include="Assets\142142.png" />
+    <Content Include="Assets\150150.png" />
+    <Content Include="Assets\200200.png" />
+    <Content Include="Assets\284284.png" />
+    <Content Include="Assets\300300.png" />
+    <Content Include="Assets\310150.scale-100.png" />
+    <Content Include="Assets\310150.scale-200.png" />
+    <Content Include="Assets\310310.png" />
+    <Content Include="Assets\4444.png" />
+    <Content Include="Assets\465225.png" />
+    <Content Include="Assets\5050.png" />
+    <Content Include="Assets\620300.png" />
+    <Content Include="Assets\620620.png" />
+    <Content Include="Assets\7171.png" />
+    <Content Include="Assets\8989.png" />
+    <Content Include="Assets\Logo300.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen1024.png" />
+    <Content Include="Assets\Square310x310Logo.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-125.png" />
+    <Content Include="Assets\Square71x71Logo.scale-150.png" />
+    <Content Include="Assets\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide620x300Logo.png" />
+    <Content Include="Content\Bricks\n000.png" />
+    <Content Include="Content\Bricks\n20.png" />
+    <Content Include="Content\Bricks\n21.png" />
+    <Content Include="Content\Common\g002.png" />
+    <Content Include="Content\Common\g004.png" />
+    <Content Include="Content\Common\g005.png" />
+    <Content Include="Content\Common\g006.png" />
+    <Content Include="Content\Common\t022.png" />
+    <Content Include="Content\Enemies\e010.png" />
+    <Content Include="Content\Enemies\e011.png" />
+    <Content Include="Content\Enemies\e012.png" />
+    <Content Include="Content\Enemies\e013.png" />
+    <Content Include="Content\Enemies\ee03.png" />
+    <Content Include="Content\Fonts\Font001.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Font002_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\002.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\003.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\004.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\005.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\006.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\007.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\008.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\009.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\010.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\011.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\012.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\013.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\014.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\015.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\016.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\017.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\018.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\019.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\020.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\021.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\022.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\023.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\024.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\025.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\026.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\027.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\028.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\029.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\030.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Right\031.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\002.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\003.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\004.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\005.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\006.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\007.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\008.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\009.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\010.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\011.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\012.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\013.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\014.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\015.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\016.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\017.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\018.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\019.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\020.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\021.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\022.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\023.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\024.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\025.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\026.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\027.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\028.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\029.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\030.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\031.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\032.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\033.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\034.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid\Right\035.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\002.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\003.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\004.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\005.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\006.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\007.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\008.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\009.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\010.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\011.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\012.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\013.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\014.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\015.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\016.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\017.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\018.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\019.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\020.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\021.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\022.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\023.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\024.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\025.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\026.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\027.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\028.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\029.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\030.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\031.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Left\032.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\002.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\003.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\004.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\005.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\006.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\007.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\008.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\009.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\010.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\011.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\012.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\013.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\014.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\015.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\016.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\017.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\018.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\019.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\020.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\021.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\022.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\023.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\024.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\025.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\026.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\027.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\028.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\029.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\030.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\031.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Revenge Of The Doh\Right\032.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Left\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\001.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\002.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\003.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\004.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\005.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\006.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\007.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\008.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\009.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\010.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\011.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\012.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\013.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\014.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\015.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\016.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\018.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\019.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\020.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\021.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\022.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\023.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\024.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\025.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\026.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\027.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\028.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\029.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\030.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\031.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\032.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Tournament\Right\033.level">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Font002.fnt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ArkanoidDXUniverse_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\310150.png" />
+    <Content Include="Assets\5454.png" />
+    <Content Include="Assets\558270.jpg" />
+    <Content Include="Assets\558270.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-200.png" />
+    <Content Include="Assets\Shop.png" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-180.png" />
+    <Content Include="Assets\Wide558x270Logo.png" />
+    <Content Include="Content\Background\bg01.png" />
+    <Content Include="Content\Background\bg02.png" />
+    <Content Include="Content\Background\bg03.png" />
+    <Content Include="Content\Background\bg04.png" />
+    <Content Include="Content\Background\bg05.png" />
+    <Content Include="Content\Background\bg06.png" />
+    <Content Include="Content\Background\bg07.png" />
+    <Content Include="Content\Background\bg08.png" />
+    <Content Include="Content\Background\bg09.png" />
+    <Content Include="Content\Background\bg10.png" />
+    <Content Include="Content\Background\bg11.png" />
+    <Content Include="Content\Background\bg12.png" />
+    <Content Include="Content\Background\bg13.png" />
+    <Content Include="Content\Background\bg14.png" />
+    <Content Include="Content\Background\bg15.png" />
+    <Content Include="Content\Background\bg16.png" />
+    <Content Include="Content\Bricks\n001.png" />
+    <Content Include="Content\Bricks\n002.png" />
+    <Content Include="Content\Bricks\n003.png" />
+    <Content Include="Content\Bricks\n004.png" />
+    <Content Include="Content\Bricks\n005.png" />
+    <Content Include="Content\Bricks\n006.png" />
+    <Content Include="Content\Bricks\n007.png" />
+    <Content Include="Content\Bricks\n008.png" />
+    <Content Include="Content\Bricks\n009.png" />
+    <Content Include="Content\Bricks\n010.png" />
+    <Content Include="Content\Bricks\n011.png" />
+    <Content Include="Content\Bricks\n012.png" />
+    <Content Include="Content\Bricks\n013.png" />
+    <Content Include="Content\Bricks\n014.png" />
+    <Content Include="Content\Bricks\n015.png" />
+    <Content Include="Content\Bricks\n016.png" />
+    <Content Include="Content\Bricks\n017.png" />
+    <Content Include="Content\Bricks\n018.png" />
+    <Content Include="Content\Bricks\n019.png" />
+    <Content Include="Content\Common\d001.png" />
+    <Content Include="Content\Common\d002.png" />
+    <Content Include="Content\Common\d003.png" />
+    <Content Include="Content\Common\f001.png" />
+    <Content Include="Content\Common\f002.png" />
+    <Content Include="Content\Common\f003.png" />
+    <Content Include="Content\Common\g001.png" />
+    <Content Include="Content\Common\g003.png" />
+    <Content Include="Content\Common\i001.png" />
+    <Content Include="Content\Common\i002.png" />
+    <Content Include="Content\Common\IngameAdd.png" />
+    <Content Include="Content\Common\l001.png" />
+    <Content Include="Content\Common\l002.png" />
+    <Content Include="Content\Common\l003.png" />
+    <Content Include="Content\Common\m001.png" />
+    <Content Include="Content\Common\m002.png" />
+    <Content Include="Content\Common\m003.png" />
+    <Content Include="Content\Common\m005.png" />
+    <Content Include="Content\Common\m006.png" />
+    <Content Include="Content\Common\m007.png" />
+    <Content Include="Content\Common\m008.png" />
+    <Content Include="Content\Common\t001.png" />
+    <Content Include="Content\Common\t002.png" />
+    <Content Include="Content\Common\t003.png" />
+    <Content Include="Content\Common\t004.png" />
+    <Content Include="Content\Common\t005.png" />
+    <Content Include="Content\Common\t006.png" />
+    <Content Include="Content\Common\t007.png" />
+    <Content Include="Content\Common\t008.png" />
+    <Content Include="Content\Common\t009.png" />
+    <Content Include="Content\Common\t010.png" />
+    <Content Include="Content\Common\t011.png" />
+    <Content Include="Content\Common\t012.png" />
+    <Content Include="Content\Common\t013.png" />
+    <Content Include="Content\Common\t014.png" />
+    <Content Include="Content\Common\t015.png" />
+    <Content Include="Content\Common\t016.png" />
+    <Content Include="Content\Common\t017.png" />
+    <Content Include="Content\Common\t018.png" />
+    <Content Include="Content\Common\t019.png" />
+    <Content Include="Content\Common\t020.png" />
+    <Content Include="Content\Common\t021.png" />
+    <Content Include="Content\Enemies\e001.png" />
+    <Content Include="Content\Enemies\e002.png" />
+    <Content Include="Content\Enemies\e003.png" />
+    <Content Include="Content\Enemies\e004.png" />
+    <Content Include="Content\Enemies\e005.png" />
+    <Content Include="Content\Enemies\e006.png" />
+    <Content Include="Content\Enemies\e007.png" />
+    <Content Include="Content\Enemies\e008.png" />
+    <Content Include="Content\Enemies\e009.png" />
+    <Content Include="Content\Enemies\ee01.png" />
+    <Content Include="Content\Enemies\ee02.png" />
+    <Content Include="Content\Fonts\Font001_0.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Level\Arkanoid DX\Box.png" />
+    <Content Include="Content\Level\Arkanoid DX\Title.png" />
+    <Content Include="Content\Level\Arkanoid\Box.png" />
+    <Content Include="Content\Level\Arkanoid\Title.png" />
+    <Content Include="Content\Level\Revenge Of The Doh\Box.png" />
+    <Content Include="Content\Level\Revenge Of The Doh\Title.png" />
+    <Content Include="Content\Level\Tournament\Box.png" />
+    <Content Include="Content\Level\Tournament\Title.png" />
+    <Content Include="Content\OSK\OSKF.png" />
+    <Content Include="Content\OSK\OSKLC.png" />
+    <Content Include="Content\OSK\OSKSFT.png" />
+    <Content Include="Content\OSK\OSKUC.png" />
+    <Content Include="Content\OSK\OSKUSFT.png" />
+    <Content Include="Content\PowerUps\pu01.png" />
+    <Content Include="Content\PowerUps\pu02.png" />
+    <Content Include="Content\PowerUps\pu03.png" />
+    <Content Include="Content\PowerUps\pu04.png" />
+    <Content Include="Content\PowerUps\pu05.png" />
+    <Content Include="Content\PowerUps\pu06.png" />
+    <Content Include="Content\PowerUps\pu07.png" />
+    <Content Include="Content\PowerUps\pu08.png" />
+    <Content Include="Content\PowerUps\pu09.png" />
+    <Content Include="Content\PowerUps\pu10.png" />
+    <Content Include="Content\PowerUps\pu11.png" />
+    <Content Include="Content\PowerUps\pu12.png" />
+    <Content Include="Content\PowerUps\pu13.png" />
+    <Content Include="Content\PowerUps\pu14.png" />
+    <Content Include="Content\PowerUps\pu15.png" />
+    <Content Include="Content\PowerUps\pu16.png" />
+    <Content Include="Content\PowerUps\pu17.png" />
+    <Content Include="Content\Vaus\b001.png" />
+    <Content Include="Content\Vaus\b002.png" />
+    <Content Include="Content\Vaus\b003.png" />
+    <Content Include="Content\Vaus\b004.png" />
+    <Content Include="Content\Vaus\p001.png" />
+    <Content Include="Content\Vaus\p002.png" />
+    <Content Include="Content\Vaus\p003.png" />
+    <Content Include="Content\Vaus\vc01.png" />
+    <Content Include="Content\Vaus\vc02.png" />
+    <Content Include="Content\Vaus\vc03.png" />
+    <Content Include="Content\Vaus\vc04.png" />
+    <Content Include="Content\Vaus\ve00.png" />
+    <Content Include="Content\Vaus\ve01.png" />
+    <Content Include="Content\Vaus\ve02.png" />
+    <Content Include="Content\Vaus\ve03.png" />
+    <Content Include="Content\Vaus\ve04.png" />
+    <Content Include="Content\Vaus\ve05.png" />
+    <Content Include="Content\Vaus\vm01.png" />
+    <Content Include="Content\Vaus\vx00.png" />
+    <Content Include="Content\Vaus\vx01.png" />
+    <Content Include="Content\Vaus\vx02.png" />
+    <Content Include="Content\Vaus\vx03.png" />
+    <Content Include="Content\Vaus\vx04.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="GamePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\Audio\" />
+    <Folder Include="Content\Level\Arkanoid DX\Left\" />
+    <Folder Include="Content\Level\Arkanoid\Left\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
